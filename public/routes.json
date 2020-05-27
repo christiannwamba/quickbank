@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "route": "/auth/login",
+      "serve": "/.auth/login/github",
+      "statusCode": 301
+    },
+    {
+      "route": "/logout",
+      "serve": "/.auth/logout",
+      "statusCode": 301
+    },
+    {
+      "route": "/",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/twitter",
+      "serve": "/.auth/login/github",
+      "statusCode": 301
+    },
+    {
+      "route": "/.auth/login/aad",
+      "serve": "/.auth/login/github",
+      "statusCode": 301
+    },
+    {
+      "route": "/.auth/login/facebook",
+      "serve": "/.auth/login/github",
+      "statusCode": 301
+    },
+    {
+      "route": "/.auth/login/google",
+      "serve": "/.auth/login/github",
+      "statusCode": 301
+    }
+  ],
+  "platformErrorOverrides": [
+    {
+      "errorType": "Unauthenticated",
+      "serve": "/login"
+    }
+  ]
+}
